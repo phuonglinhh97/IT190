@@ -260,10 +260,7 @@ class BerlinMapUI(ctk.CTk):
         path_nodes, cost = search_func(self.G, start_nodes, end_nodes, avoid_zones=avoid_zones)
 
         if path_nodes and cost != float("infinity"):
-            if selected_algo in ["Breadth-First Search (BFS)", "Depth-First Search (DFS)"]:
-                cost_text = f"📏 Chi phí: {int(cost)} bước"
-            else:
-                cost_text = f"📏 Quãng đường: {round(cost / 1000, 2)} km"
+            cost_text = f"📏 Quãng đường: {round(cost / 1000, 2)} km"
 
             self.lbl_result.configure(
                 text=f"✅ Tìm đường thành công!\n🤖 Thuật toán: {selected_algo}\n"
